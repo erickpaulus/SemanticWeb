@@ -1,0 +1,77 @@
+@prefix : <http://contoh.org/ontologi#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+###############################
+# Deklarasi Kelas
+###############################
+
+:Mahasiswa a owl:Class .
+:Dosen a owl:Class .
+:Orang a owl:Class .
+
+# Mahasiswa dan Dosen adalah subclass dari Orang
+:Mahasiswa rdfs:subClassOf :Orang .
+:Dosen rdfs:subClassOf :Orang .
+
+# Mahasiswa dan Dosen tidak boleh sama (disjoint)
+:Mahasiswa owl:disjointWith :Dosen .
+
+###############################
+# Properti Data (DatatypeProperty)
+###############################
+
+:nama a owl:DatatypeProperty ;
+  rdfs:domain :Orang ;
+  rdfs:range xsd:string .
+
+:umur a owl:DatatypeProperty ;
+  rdfs:domain :Orang ;
+  rdfs:range xsd:integer .
+
+###############################
+# Properti Objek (ObjectProperty)
+###############################
+
+:mengambil a owl:ObjectProperty ;
+  rdfs:domain :Mahasiswa ;
+  rdfs:range :MataKuliah .
+
+###############################
+# Deklarasi MataKuliah & MahasiswaDenganMKPilihan
+###############################
+
+:MataKuliah a owl:Class .
+:MataKuliahPilihan a owl:Class .
+
+# MataKuliahPilihan adalah subclass dari MataKuliah
+:MataKuliahPilihan rdfs:subClassOf :MataKuliah .
+
+# MahasiswaDenganMKPilihan adalah Mahasiswa yang mengambil beberapa MataKuliahPilihan
+:MahasiswaDenganMKPilihan a owl:Class ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+      :Mahasiswa
+      [ a owl:Restriction ;
+        owl:onProperty :mengambil ;
+        owl:someValuesFrom :MataKuliahPilihan
+      ]
+    )
+  ] .
+
+
+
+###############################
+# Individu
+###############################
+
+:Ali a :Mahasiswa ;
+  :nama "Ali Rahman"^^xsd:string ;
+  :umur 22 ;
+  :mengambil :DataScience .
+
+:DataScience a :MataKuliahPilihan ;
+  :nama "Data Science untuk Pemula"^^xsd:string .
