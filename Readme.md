@@ -22,7 +22,7 @@ This project includes:
 - Sample RDF datasets and vocabularies
 - Custom ontologies modeled in OWL
 - SPARQL queries to extract meaningful insights
-- Notes and code samples using tools like Apache Jena, RDFLib (Python), or Protégé
+- Notes and code samples using tools like Protégé, GraphDB,  Apache Jena, or RDFLib (Python) 
 - Real-world use cases like knowledge graphs, linked data, or metadata enrichment
 
 The purpose of this repository is purely educational, and I will continue adding new insights, code, and learnings as I explore further.
