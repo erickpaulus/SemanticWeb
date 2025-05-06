@@ -1,5 +1,5 @@
 ## Introduction
-The Semantic Web and Large Language Models (LLMs) both represent significant advancements in the world of information processing and artificial intelligence. While they serve different purposes, both aim to enhance the way we manage and understand data on the internet. In this document, we will explore these two technologies, how they differ, and whether the rise of LLMs signals the end of the Semantic Web.
+The Semantic Web and Large Language Models (LLMs) both represent significant advancements in the world of information processing and artificial intelligence. While they come with different purposes, both aim to enhance the way we manage and understand data on the web. In this repository, we will discuss these two technologies, how they differ, and whether the rise of LLMs signals the end of the Semantic Web.
 
 ## 1. The Semantic Web:
 ### Overview
