@@ -20,7 +20,7 @@ The Semantic Web stack is a common  framework proposed by the W3C to make machin
   - Purpose: Extends RDF with vocabulary for describing properties and classes.
   - Key point: Supports basic ontological modeling (hierarchies, domains, ranges).
 - OWL (Web Ontology Language)
-  - Purpose: Offers richer semantics than RDFS — e.g., class equivalence, property restrictions.
+  - Purpose: Offers richer semantics than RDFS — e.g., equivalent classes, disjoint classes, property restrictions.
   - Key point: Enables complex ontologies and formal reasoning.
 - Logic Layer
   - Purpose: Allows inference rules and logical reasoning based on ontologies.
