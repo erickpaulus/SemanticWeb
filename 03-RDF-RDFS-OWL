@@ -1,0 +1,119 @@
+## 1. RDF (Resource Description Framework)
+RDF : to model simple statements in a triple format (subject – predicate – object).
+
+Example in Turtle syntax:
+```
+@prefix ex: <http://example.org/> .
+
+ex:Alice a ex:Person .
+ex:Bob a ex:Professor .
+ex:CS101 a ex:Course .
+
+ex:Alice ex:takesCourse ex:CS101 .
+ex:Bob ex:teachesCourse ex:CS101 .
+```
+
+Key Points:
+- Only basic facts (triples)
+- No semantics like subclassing or constraints
+- No vocabulary meaning (e.g., “Person” and “Course” are just identifiers)
+
+## 2. RDFS (RDF Schema)
+RDFS : An extension of RDF which allow the definition of classes, hierarchies, and property domains/ranges.
+
+Example in Turtle:
+```
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:Person a rdfs:Class .
+ex:Student a rdfs:Class ; rdfs:subClassOf ex:Person .
+ex:Professor a rdfs:Class ; rdfs:subClassOf ex:Person .
+ex:Course a rdfs:Class .
+
+ex:takesCourse a rdf:Property ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Course .
+
+ex:teachesCourse a rdf:Property ;
+    rdfs:domain ex:Professor ;
+    rdfs:range ex:Course .
+
+# Instances (same as RDF)
+ex:Alice a ex:Student .
+ex:Bob a ex:Professor .
+ex:CS101 a ex:Course .
+ex:Alice ex:takesCourse ex:CS101 .
+ex:Bob ex:teachesCourse ex:CS101 .
+```
+
+Key Points:
+- Introduces class hierarchy
+- Can specify expected types via domain and range
+- No cardinality, no complex constraints or logic
+
+## 3. OWL (Web Ontology Language)
+OWL : An extension of RDFS that adds richer logical constraints, cardinality, equivalence, and reasoning capabilities.
+
+Example in OWL (Turtle with OWL vocabulary):
+```
+@prefix ex: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Define classes
+ex:Person a owl:Class .
+ex:Student a owl:Class ;
+    rdfs:subClassOf ex:Person .
+
+ex:Professor a owl:Class ;
+    rdfs:subClassOf ex:Person .
+
+ex:Course a owl:Class .
+
+# Define object properties with constraints
+ex:takesCourse a owl:ObjectProperty ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Course .
+
+ex:teachesCourse a owl:ObjectProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range ex:Course ;
+    owl:inverseOf ex:isTaughtBy .
+
+# Define disjointness
+ex:Student owl:disjointWith ex:Professor .
+
+# Cardinality example: Students must take at least one course
+ex:Student rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ex:takesCourse ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Instances
+ex:Alice a ex:Student .
+ex:Bob a ex:Professor .
+ex:CS101 a ex:Course .
+
+ex:Alice ex:takesCourse ex:CS101 .
+ex:Bob ex:teachesCourse ex:CS101 .
+```
+
+Key Points:
+- Supports disjointness (e.g., Student ≠ Professor)
+- Allows inverse properties
+- Enables reasoning, e.g., infer that ex:CS101 is taught by ex:Bob
+- Can enforce cardinality constraints
+
+## The comparison of RDF, RDFS, OWL is summirized in the table below:
+| Feature               | RDF | RDFS              | OWL                       |
+| --------------------- | --- | ----------------- | ------------------------- |
+| Class definitions     | N   | Y (`rdfs:Class`)  | Y (`owl:Class`)           |
+| Subclass hierarchy    | N   | Y                 | Y                         |
+| Property domain/range | N   | Y ('rdf:Property) | Y ('owl:ObjectProperty')  |
+| Disjoint classes      | N   | N                 | Y                         |
+| Inverse properties    | N   | N                 | Y                         |
+| Logical restrictions  | N   | N                 | Y (e.g., cardinality)     |
+| Reasoning support     | N   | Basic (type inf.) | Y (rich inference)        |
