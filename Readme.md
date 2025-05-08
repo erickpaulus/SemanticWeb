@@ -19,11 +19,11 @@ By using these tools, data can be linked and queried in a way that mimics human 
 
 This project includes:
 
-- Sample RDF datasets and vocabularies
-- Custom ontologies modeled in OWL
-- SPARQL queries to extract meaningful insights
-- Notes and code samples using tools like Protégé, GraphDB,  Apache Jena, or RDFLib (Python) 
-- Real-world use cases like knowledge graphs, linked data, or metadata enrichment
+- Sample RDF datasets and vocabularies (Task to do)
+- Custom ontologies modeled in OWL (Task to do)
+- SPARQL queries to extract meaningful insights (Task to do)
+- Notes and code samples using tools like Protégé, GraphDB,  Apache Jena, or RDFLib (Python) (Task to do)
+- Real-world use cases like knowledge graphs, linked data, or metadata enrichment (Task to do)
 
 The purpose of this repository is purely educational, and I will continue adding new insights, code, and learnings as I explore further.
 
