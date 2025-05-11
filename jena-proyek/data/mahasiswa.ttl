@@ -1,0 +1,12 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ex:mahasiswa1 a ex:Mahasiswa ;
+    foaf:name "Agus Mulyono" ;
+    ex:nim "11210010" ;
+    ex:prodi "Teknik Informatika" .
+
+ex:mahasiswa2 a ex:Mahasiswa ;
+    foaf:name "Guntur Karo" ;
+    ex:nim "1321001" ;
+    ex:prodi "Sistem Informasi" .
