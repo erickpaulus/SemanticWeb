@@ -1,0 +1,40 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Program Studi
+ex:prodiTI a ex:ProgramStudi ;
+    ex:namaProdi "Teknik Informatika" ;
+    ex:kodeProdi "TI01" .
+
+ex:prodiSI a ex:ProgramStudi ;
+    ex:namaProdi "Sistem Informasi" ;
+    ex:kodeProdi "SI01" .
+
+# Relasi Mahasiswa ke Prodi
+ex:mahasiswa1 ex:mengikutiProdi ex:prodiTI .
+ex:mahasiswa2 ex:mengikutiProdi ex:prodiSI .
+
+# Ruang Kuliah
+ex:ruangA1 a ex:Ruang ;
+    ex:namaRuang "A1" ;
+    ex:kapasitas 40 ;
+    ex:beradaDiGedung "Gedung A" .
+
+ex:ruangB2 a ex:Ruang ;
+    ex:namaRuang "B2" ;
+    ex:kapasitas 30 ;
+    ex:beradaDiGedung "Gedung B" .
+
+# Jadwal Mata Kuliah
+ex:jadwal1 a ex:Jadwal ;
+    ex:untukMatkul ex:matkul1 ;
+    ex:dijadwalkanDi ex:ruangA1 ;
+    ex:beradaPadaHari "Senin" ;
+    ex:berlangsungPadaJam "08:00-10:00" .
+
+ex:jadwal2 a ex:Jadwal ;
+    ex:untukMatkul ex:matkul2 ;
+    ex:dijadwalkanDi ex:ruangB2 ;
+    ex:beradaPadaHari "Rabu" ;
+    ex:berlangsungPadaJam "10:00-12:00" .
