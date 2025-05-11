@@ -1,15 +1,15 @@
 import requests
 
-fuseki_url = "http://localhost:3030/mahasiswa-db/sparql"
+fuseki_url = "http://localhost:3030/mhs-db/sparql"
 query = """
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX ex: <http://example.org/ns#>
 
-SELECT ?nama ?nim ?jurusan WHERE {
+SELECT ?nama ?nim ?prodi WHERE {
   ?mhs a ex:Mahasiswa ;
        foaf:name ?nama ;
        ex:nim ?nim ;
-       ex:jurusan ?jurusan .
+       ex:prodi ?prodi .
 }
 """
 
@@ -28,5 +28,5 @@ data = response.json()
 for result in data["results"]["bindings"]:
     print("Nama:", result["nama"]["value"])
     print("NIM:", result["nim"]["value"])
-    print("Jurusan:", result["jurusan"]["value"])
+    print("prodi:", result["prodi"]["value"])
     print("---")
