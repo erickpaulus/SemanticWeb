@@ -7,6 +7,7 @@ To do:
 Prasyarat:
 - sudah install java JDK yang sesuai kebutuhan Apache Jena Fuseki
 - sudah install Apache Jena Fuseki (https://jena.apache.org/download/index.cgi)
+-  sudah install python
 
 Code, RDF, SPARQL dapat dilihat pada folder [jena-proyek](https://github.com/erickpaulus/SemanticWeb/tree/main/jena-proyek)
 ## Struktur Proyek
@@ -39,9 +40,10 @@ ex:mahasiswa2 a ex:Mahasiswa ;
 ```
 
 ## 2. Jalankan Fuseki dan Upload Dataset
-- Jalankan Fuseki:
+- Buka folder Apache Jena Fuseki
+- _double click_ fuseki-server.bat 
 ```
-./fuseki-server
+./fuseki-server.bat
 ```
 - Buka browser ke: http://localhost:3030
 - Buat dataset baru, misal mahasiswa-db
