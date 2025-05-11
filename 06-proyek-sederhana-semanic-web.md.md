@@ -27,14 +27,15 @@ jena-project/
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 ex:mahasiswa1 a ex:Mahasiswa ;
-    foaf:name "Andi" ;
-    ex:nim "12345678" ;
-    ex:jurusan "Teknik Informatika" .
+    foaf:name "Agus Mulyono" ;
+    ex:nim "11210010" ;
+    ex:prodi "Teknik Informatika" .
 
 ex:mahasiswa2 a ex:Mahasiswa ;
-    foaf:name "Budi" ;
-    ex:nim "87654321" ;
-    ex:jurusan "Sistem Informasi" .
+    foaf:name "Guntur Karo" ;
+    ex:nim "1321001" ;
+    ex:prodi "Sistem Informasi" .
+
 ```
 
 ## 2. Jalankan Fuseki dan Upload Dataset
