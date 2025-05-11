@@ -7,7 +7,8 @@ To do:
 Prasyarat:
 - sudah install jave JDK yang sesuai kebutuhan Apache Jena Fuseki
 - sudah install Apache Jena Fuseki (https://jena.apache.org/download/index.cgi)
-  
+
+Code, RDF, SPARQL dapat dilihat pada folder [jena-proyek](https://github.com/erickpaulus/SemanticWeb/tree/main/jena-proyek)
 ## Struktur Proyek
 ```
 jena-project/
