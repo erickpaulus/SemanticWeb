@@ -46,7 +46,7 @@ ex:mahasiswa2 a ex:Mahasiswa ;
 ./fuseki-server.bat
 ```
 - Buka browser ke: http://localhost:3030
-- Buat dataset baru, misal mahasiswa-db
+- Buat dataset baru, misal mhs-db
 - pilih add data
 - Upload file mahasiswa.ttl data data turtle lainnya, lihat [di sini](https://github.com/erickpaulus/SemanticWeb/tree/main/jena-proyek/data)
 
