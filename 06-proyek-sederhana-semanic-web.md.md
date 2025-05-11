@@ -55,11 +55,11 @@ ex:mahasiswa2 a ex:Mahasiswa ;
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX ex: <http://example.org/ns#>
 
-SELECT ?nama ?nim ?jurusan WHERE {
+SELECT ?nama ?nim ?prodi WHERE {
   ?mhs a ex:Mahasiswa ;
        foaf:name ?nama ;
        ex:nim ?nim ;
-       ex:jurusan ?jurusan .
+       ex:prodi ?prodi .
 }
 ```
 Ujicoba SPARQL lainnya yang tersimpan pada [tautan](https://github.com/erickpaulus/SemanticWeb/tree/main/jena-proyek/sparql) ini.
