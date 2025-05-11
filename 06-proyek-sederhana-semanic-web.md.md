@@ -45,7 +45,7 @@ ex:mahasiswa2 a ex:Mahasiswa ;
 - Buka browser ke: http://localhost:3030
 - Buat dataset baru, misal mahasiswa-db
 - pilih add data
-- Upload file mahasiswa.ttl data data turtle lainnya
+- Upload file mahasiswa.ttl data data turtle lainnya, lihat [di sini](https://github.com/erickpaulus/SemanticWeb/tree/main/jena-proyek/data)
 
 ## 3. Contoh SPARQL Query
 ```
@@ -59,6 +59,7 @@ SELECT ?nama ?nim ?jurusan WHERE {
        ex:jurusan ?jurusan .
 }
 ```
+Ujicoba SPARQL lainnya yang tersimpan pada [tautan](https://github.com/erickpaulus/SemanticWeb/tree/main/jena-proyek/sparql) ini.
 ## 4. Akses data dari Python 
 - Install Library
 ```
