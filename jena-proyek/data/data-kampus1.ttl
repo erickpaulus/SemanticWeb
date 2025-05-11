@@ -1,0 +1,38 @@
+@prefix ex: <http://example.org/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Mahasiswa
+ex:mahasiswa1 a ex:Mahasiswa ;
+    foaf:name "Tiwi Pratiwi" ;
+    ex:nim "112021001" ;
+    ex:prodi "Teknik Informatika" ;
+    ex:mengambilMatkul ex:matkul1, ex:matkul2 .
+
+ex:mahasiswa2 a ex:Mahasiswa ;
+    foaf:name "Budi Harto" ;
+    ex:nim "122021001" ;
+    ex:prodi "Matematika" ;
+    ex:mengambilMatkul ex:matkul2 .
+
+# Dosen
+ex:dosen1 a ex:Dosen ;
+    foaf:name "Prof. Rinia" ;
+    ex:nip "D11001" ;
+    ex:mengajarMatkul ex:matkul1 .
+
+ex:dosen2 a ex:Dosen ;
+    foaf:name "Prof. Asep " ;
+    ex:nip "D12002" ;
+    ex:mengajarMatkul ex:matkul2 .
+
+# Mata Kuliah
+ex:matkul1 a ex:MataKuliah ;
+    ex:namaMatkul "Pemrograman Dasar" ;
+    ex:kodeMatkul "TI101" ;
+    ex:sks "3"^^xsd:integer .
+
+ex:matkul2 a ex:MataKuliah ;
+    ex:namaMatkul "Kalkulus" ;
+    ex:kodeMatkul "MT202" ;
+    ex:sks "3"^^xsd:integer .
